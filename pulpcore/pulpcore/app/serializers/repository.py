@@ -196,6 +196,12 @@ class RepositoryPublishURLSerializer(serializers.Serializer):
         parent_lookup_kwargs={'repository_pk': 'repository__pk'},
     )
 
+    pass_through = serializers.BooleanField(
+        help_text = 'help',
+        required = False,
+        default = False
+    )
+
     def validate(self, data):
         if hasattr(self, 'initial_data'):
             validate_unknown_fields(self.initial_data, self.fields)
