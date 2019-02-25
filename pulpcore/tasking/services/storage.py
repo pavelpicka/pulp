@@ -6,7 +6,6 @@ from gettext import gettext as _
 from django.conf import settings
 from rq.job import get_current_job
 
-
 class WorkerDirectory:
     """
     The directory associated with a RQ worker.

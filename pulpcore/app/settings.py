@@ -16,7 +16,7 @@ from pkg_resources import iter_entry_points
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-STATIC_ROOT = '/var/lib/pulp/static/'
+#STATIC_ROOT = '/var/lib/pulp/static/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -26,10 +26,10 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-MEDIA_ROOT = '/var/lib/pulp/'
+#MEDIA_ROOT = '/var/lib/pulp/'
 DEFAULT_FILE_STORAGE = 'pulpcore.app.models.storage.FileSystem'
 
-FILE_UPLOAD_TEMP_DIR = '/var/lib/pulp/tmp/'
+#FILE_UPLOAD_TEMP_DIR = '/var/lib/pulp/tmp/'
 # List of upload handler classes to be applied in order.
 FILE_UPLOAD_HANDLERS = (
     'pulpcore.app.files.HashingFileUploadHandler',
@@ -206,7 +206,7 @@ LOGGING = {
     }
 }
 
-WORKING_DIRECTORY = '/var/lib/pulp/tmp'
+# WORKING_DIRECTORY = '/var/lib/pulp/tmp'
 
 CONTENT_HOST = None
 CONTENT_PATH_PREFIX = '/pulp/content/'

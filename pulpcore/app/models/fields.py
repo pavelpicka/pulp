@@ -1,7 +1,7 @@
 import os
 from gettext import gettext as _
 
-from django.conf import settings
+from dynaconf.contrib import django_dynaconf
 from django.db.models import FileField
 
 from pulpcore.app.files import TemporaryDownloadedFile
@@ -30,7 +30,7 @@ class ArtifactFileField(FileField):
         file_name = str(model_instance.file)
         upload_to = self.upload_to(model_instance, '')
         if file_name != upload_to and file_name.startswith(
-                os.path.join(settings.MEDIA_ROOT, 'artifact')):
+                os.path.join(django_dynaconf.settings.MEDIA_ROOT, 'artifact')):
             raise ValueError(_('The file referenced by the Artifact is already present in '
                                'Artifact storage. Files must be stored outside this location '
                                'prior to Artifact creation.'))
